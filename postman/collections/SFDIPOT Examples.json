@@ -1,0 +1,1676 @@
+{
+	"info": {
+		"_postman_id": "a067551b-9ba9-4ef5-8b08-0cead8db134e",
+		"name": "SFDIPOT Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "2056961-a067551b-9ba9-4ef5-8b08-0cead8db134e"
+	},
+	"item": [
+		{
+			"name": "Structure",
+			"item": [
+				{
+					"name": "Schedule - Ok",
+					"id": "1c9e9463-554e-4b93-bc68-18dc13b11ef8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"S - New meeting\",\r\n  \"date\": \"2023-04-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1d48d634-0364-406d-8003-95854c63e487",
+							"name": "Meeting created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"S - New meeting\",\r\n  \"date\": \"2023-04-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1023,\n    \"topic\": \"S - New meeting\",\n    \"date\": \"2023-04-01\",\n    \"starttime\": \"18:00\",\n    \"length\": 60\n}"
+						}
+					]
+				},
+				{
+					"name": "Schedule - Disconnected DB",
+					"id": "01f5e295-02db-4361-ad15-e4d403c6cb43",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"S - New meeting\",\r\n  \"date\": \"2023-04-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "19bbb53b-86db-45f1-9064-335b93213e22",
+							"name": "Disconnected DB - Client error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"S - New meeting\",\r\n  \"date\": \"2023-04-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "Request Timeout",
+							"code": 408,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"id": "00b4274b-5780-4f7a-b52c-5d3d6d7fc286",
+							"name": "Disconnected DB - Server error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"S - New meeting\",\r\n  \"date\": \"2023-04-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "Text",
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "39b2dd0e-775d-4792-b231-45c9d706cdc7"
+		},
+		{
+			"name": "Functionality",
+			"item": [
+				{
+					"name": "Schedule",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8c745305-908f-4a54-a862-7f61cf830c28",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains correct values\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.topic).to.eql(\"F - New meeting\");\r",
+									"    pm.expect(jsonData.date).to.eql(\"2023-04-02\");\r",
+									"    pm.expect(jsonData.starttime).to.eql(\"09:00\");\r",
+									"    pm.expect(jsonData.length).to.eql(30);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b8b78077-9c47-40c8-9a7d-cc889f2a1995",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"F - New meeting\",\r\n  \"date\": \"2023-04-02\",\r\n  \"starttime\": \"09:00\",\r\n  \"length\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e4b3900b-0d3f-4698-80f4-81bf80823542",
+							"name": "Meeting created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"F - New meeting\",\r\n  \"date\": \"2023-04-02\",\r\n  \"starttime\": \"09:00\",\r\n  \"length\": 30\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1024,\n    \"topic\": \"F - New meeting\",\n    \"date\": \"2023-04-02\",\n    \"starttime\": \"09:00\",\n    \"length\": 30\n}"
+						}
+					]
+				},
+				{
+					"name": "Schedule - Existing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3e34f05c-7adc-49e6-a000-56e94e006c9a",
+								"exec": [
+									"pm.test(\"Status code is bad request\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Error message is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Meeting already scheduled\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "fd8a9f0b-9dc6-41f6-9991-f55fcea67b89",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"F - New meeting\",\r\n  \"date\": \"2023-04-05\",\r\n  \"starttime\": \"03:00\",\r\n  \"length\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f83fa9f5-012e-45b8-853c-76ca2bb2387e",
+							"name": "Cannot schedule with same topic",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"F - New meeting\",\r\n  \"date\": \"2023-04-05\",\r\n  \"starttime\": \"03:00\",\r\n  \"length\": 20\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n  \"message\": \"Meeting already scheduled\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Meeting By Topic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b04b34b0-ebb5-4c93-96c8-24fa544ad8ae",
+								"exec": [
+									"pm.test(\"Status code is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains correct values\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.topic).to.eql(\"F - New meeting\");\r",
+									"    pm.expect(jsonData.date).to.eql(\"2023-04-02\");\r",
+									"    pm.expect(jsonData.starttime).to.eql(\"09:00\");\r",
+									"    pm.expect(jsonData.length).to.eql(30);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8f9191ad-e5e3-4263-bb8e-aaa30a96fa28",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseUrl}}/?topic=F - New meeting",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "topic",
+									"value": "F - New meeting"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "3104ce95-36a5-44c7-a483-bd99bd98ed25",
+							"name": "Meeting received",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{baseUrl}}/?topic=F - New meeting",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "topic",
+											"value": "F - New meeting"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1024,\n    \"topic\": \"F - New meeting\",\n    \"date\": \"2023-04-02\",\n    \"starttime\": \"09:00\",\n    \"length\": 30\n}"
+						},
+						{
+							"id": "435b137c-98e6-4d3b-a2eb-9efb69869c01",
+							"name": "Meeting not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{baseUrl}}/?topic=XXX",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "topic",
+											"value": "XXX"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Meeting not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Meeting By Topic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "584fc85b-7f6e-4483-b21a-739ca93d7244",
+								"exec": [
+									"pm.test(\"Status code is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Message is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Meeting cancelled\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2ab378bb-e0bd-4f7b-b720-3255693b2d0b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseUrl}}/?topic=F - New meeting",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "topic",
+									"value": "F - New meeting"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a262dfcb-0f75-4773-9154-df394fe8e58c",
+							"name": "Meeting cancelled",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://{{baseUrl}}/?topic=F - New meeting",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "topic",
+											"value": "F - New meeting"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Meeting cancelled\"\n}"
+						},
+						{
+							"id": "025d6bb2-4769-46df-8c21-f5c3f0cb4f41",
+							"name": "Meeting not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://{{baseUrl}}/?topic=XXX",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "topic",
+											"value": "XXX"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Meeting not found\"\n}"
+						}
+					]
+				}
+			],
+			"id": "1cc82939-09ff-4dcd-a98d-bfd3e6536521"
+		},
+		{
+			"name": "Data",
+			"item": [
+				{
+					"name": "Schedule - Ok",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ff9e1aac-eeec-46c9-a305-988a0ae758bb",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains correct values\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.topic).to.eql(\"D - New meeting\");\r",
+									"    pm.expect(jsonData.date).to.eql(\"2023-05-01\");\r",
+									"    pm.expect(jsonData.starttime).to.eql(\"18:00\");\r",
+									"    pm.expect(jsonData.length).to.eql(60);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7de289a8-17f8-49fe-8fd1-63d7637342f5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"D - New meeting\",\r\n  \"date\": \"2023-05-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1545faf6-d351-4147-b558-97975350dc67",
+							"name": "Meeting created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"D - New meeting\",\r\n  \"date\": \"2023-05-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1078,\n    \"topic\": \"D - New meeting\",\n    \"date\": \"2023-05-01\",\n    \"starttime\": \"18:00\",\n    \"length\": 60\n}"
+						}
+					]
+				},
+				{
+					"name": "Schedule - Missing Fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f244c8f0-8f30-4ca8-a52f-184c65bd1340",
+								"exec": [
+									"pm.test(\"Status code is error\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7b3eda64-c5ad-4c3d-9cad-3b4c0adc4c7b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"D - missing fields\",\r\n  \"date\": \"2023-05-01\",\r\n  \"length\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "cfab3917-b478-412e-92fa-d99ddd74990a",
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"D - missing fields\",\r\n  \"date\": \"2023-05-01\",\r\n  \"length\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Bad paraemeters\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Schedule - Invalid length",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a7132975-fe9e-4e04-abaf-eefcbcb2b6dd",
+								"exec": [
+									"pm.test(\"Status code is error\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e00348a6-9611-4d14-b9b3-cab52f4d428b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"D - invalid length\",\r\n  \"date\": \"2023-05-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": -10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "cf86c564-b04d-4436-86d1-4d81a6bb7546",
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"D - invalid length\",\r\n  \"date\": \"2023-05-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": -10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"message\": \"Bad paraemeters\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Schedule - Arabic characters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "24e0fb73-944b-4f5d-b198-10b718ec9eb3",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains correct values\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.topic).to.eql(\"D - جديد اجتماع\");\r",
+									"    pm.expect(jsonData.date).to.eql(\"2023-05-01\");\r",
+									"    pm.expect(jsonData.starttime).to.eql(\"18:00\");\r",
+									"    pm.expect(jsonData.length).to.eql(60);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f88339d1-5df5-4d7a-81b9-353a72c583b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"D - جديد اجتماع\",\r\n  \"date\": \"2023-05-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f5e9eca1-6e82-4f48-bfbf-f16253d2307d",
+							"name": "Meeting created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"D - جديد اجتماع\",\r\n  \"date\": \"2023-05-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1079,\n    \"topic\": \"D - جديد اجتماع\",\n    \"date\": \"2023-05-01\",\n    \"starttime\": \"18:00\",\n    \"length\": 60\n}"
+						}
+					]
+				},
+				{
+					"name": "Schedule - Send as XML",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2031af43-ceff-4b16-bbc3-7652d4a83c74",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains correct values\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.topic).to.eql(\"D - as xml\");\r",
+									"    pm.expect(jsonData.date).to.eql(\"2023-05-01\");\r",
+									"    pm.expect(jsonData.starttime).to.eql(\"18:00\");\r",
+									"    pm.expect(jsonData.length).to.eql(60);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b7defd96-afd6-478c-8abc-8d0e289b7b86",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<meeting>\r\n  <topic>D - as xml</topic>\r\n  <date>2023-05-01</date>\r\n  <starttime>18:00</starttime>\r\n  <length>60</length>\r\n</meeting>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "8ca780c1-a4ce-4165-974d-8a447dae61e9",
+							"name": "Meeting created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<meeting>\r\n  <topic>D - as xml</topic>\r\n  <date>2023-05-01</date>\r\n  <starttime>18:00</starttime>\r\n  <length>60</length>\r\n</meeting>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1080,\n    \"topic\": \"D - as xml\",\n    \"date\": \"2023-05-01\",\n    \"starttime\": \"18:00\",\n    \"length\": 60\n}"
+						}
+					]
+				},
+				{
+					"name": "Schedule - Accept XML",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c9b18be7-5842-4151-8b3c-73c48f0293b9",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains correct values\", function () {\r",
+									"    var jsonData = xml2Json(responseBody);\r",
+									"\r",
+									"    pm.expect(jsonData.topic).to.eql(\"D - accept xml\");\r",
+									"    pm.expect(jsonData.date).to.eql(\"2023-05-01\");\r",
+									"    pm.expect(jsonData.starttime).to.eql(\"18:00\");\r",
+									"    pm.expect(jsonData.length).to.eql(60);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d7569dd1-8614-43d1-990b-8e34b99fe960",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topic\": \"D - accept xml\",\r\n  \"date\": \"2023-05-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/schedule",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e5b2375f-bef7-4ca2-8d1c-59f7f6e93445",
+							"name": "Schedule - Accept XML",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"topic\": \"D - accept xml\",\r\n  \"date\": \"2023-05-01\",\r\n  \"starttime\": \"18:00\",\r\n  \"length\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{baseUrl}}/schedule",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"schedule"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "a44cf513-ede2-4360-8c9a-cb20aa4be8ee"
+		},
+		{
+			"name": "Interface",
+			"item": [
+				{
+					"name": "Get Meeting By Topic As Curl",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "269d101d-c88f-4f3d-b10c-977ab246b07e",
+								"exec": [
+									"pm.test(\"Status code is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains correct values\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.topic).to.eql(\"I - as curl\");\r",
+									"    pm.expect(jsonData.date).to.eql(\"2023-04-02\");\r",
+									"    pm.expect(jsonData.starttime).to.eql(\"09:00\");\r",
+									"    pm.expect(jsonData.length).to.eql(30);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "40b911b4-bd2a-4562-bb39-432eb8c0a210",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "curl/7.83.1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{baseUrl}}/?topic=I - As Curl",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "topic",
+									"value": "I - As Curl"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "8ff13dc0-b40e-4cfe-befd-f9fb8e1efb84",
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "User-Agent",
+										"value": "curl/7.83.1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{baseUrl}}/?topic=I - As Curl",
+									"protocol": "http",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "topic",
+											"value": "I - As Curl"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "Text",
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Meeting By Topic - No Authorization",
+					"id": "e4a834dd-6a60-411f-ab78-41b19ad18e15",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseUrl}}/?topic=I - Unauthorized",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "topic",
+									"value": "I - Unauthorized"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a22cf14d-0b37-4c10-a3c8-ab51c3f0f257",
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "Text",
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "d07008d6-170d-4ac7-b33c-7af99e4de505"
+		},
+		{
+			"name": "Platform",
+			"item": [],
+			"id": "24f15401-8f2c-4933-9aa1-783406730803"
+		},
+		{
+			"name": "Operation",
+			"item": [
+				{
+					"name": "Scheduling meeting with existing topic",
+					"item": [
+						{
+							"name": "Schedule - Ok",
+							"id": "06e55c47-c82d-4afd-9262-d53fdea52b4b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Meeting By Topic",
+							"id": "39090483-65c0-4b83-bdeb-01b10a360a2b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Schedule with same topic",
+							"id": "bd7b137a-a102-407f-97d9-8a6c28e9b7e7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Meeting still works",
+							"id": "d1eaaab5-358d-4640-b791-e481c325ecee",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "5d7b91c8-6a0e-43da-877f-ef54c96a74b4"
+				},
+				{
+					"name": "Schedule deleted meeting",
+					"item": [
+						{
+							"name": "Schedule - Ok",
+							"id": "d5875685-a5a9-4bf0-b67c-4ca6b1fb4ec0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Meeting",
+							"id": "1062fb85-8501-4775-affb-6c73ce8a0478",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Meeting",
+							"id": "ab9d05f6-1cfe-4518-8817-d01ec52eb2cd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get deleted meeting",
+							"id": "f34cf74d-ae92-4e06-a3a9-4666c68684e1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Schedule with same topic",
+							"id": "88710500-52a7-4372-8d35-6b0d9a1cc076",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get \"recreated\" meeting",
+							"id": "e377e321-fb54-4ef2-9855-135015867d1b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "f7bc0c34-67da-4e2f-a709-b65dd0896865"
+				},
+				{
+					"name": "Delete twice",
+					"item": [
+						{
+							"name": "Schedule - Ok",
+							"id": "d71dae5f-870c-4c21-b79e-2e305744c88a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Meeting",
+							"id": "ae6067b7-f289-46f8-8126-53d588bd5894",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Meeting again",
+							"id": "8ddad752-4a96-431c-b76b-91e17f2ef042",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "3025c4a6-46c9-4122-af00-cebfaf7c4fb7"
+				},
+				{
+					"name": "Get / Delete after failure",
+					"item": [
+						{
+							"name": "Schedule - Missing fields",
+							"id": "28df5c70-3dde-4e35-9663-df15de062d27",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Meeting",
+							"id": "0b3d5da7-a552-4370-9951-f8be8746f213",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Meeting",
+							"id": "d54964bc-9fcf-46ed-9b82-9dcfcab4be4d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "87e892c8-b1d2-4270-9947-12bd59ba5473"
+				}
+			],
+			"id": "904053f8-ec28-4323-930a-819ef0459707"
+		},
+		{
+			"name": "Time",
+			"item": [
+				{
+					"name": "Schedule - Past date",
+					"id": "da55e62c-d3ac-491f-bda1-38ee959971b3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "75c44ead-e22c-4831-a7b0-10e6dd1b28aa"
+		}
+	],
+	"variable": [
+		{
+			"id": "19a7122f-5796-4256-b9d6-e63a6935c20b",
+			"key": "baseUrl",
+			"value": "localhost"
+		}
+	]
+}
